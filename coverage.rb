@@ -17,7 +17,7 @@ if( ENV['RUBY_COVERAGE_CONFIG'] )
     coverage_dir config['report_directory']
 
     # Setting analysis formatting
-    command_name config['analysis_name']
+    command_name ENV['RUBY_COVERAGE_NAME'] || config['analysis_name']
     formatters = SimpleCov::Formatter::RcovFormatter
 
     # Adding project filter
